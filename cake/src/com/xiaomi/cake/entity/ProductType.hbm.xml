@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.xiaomi.cake.entity">
+	<class name="ProductType">
+		<id name="id" >
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"  />	
+
+		<set name="productSet" cascade="delete">
+		    <key column="PRODUCTTYPEID"/>
+		    <one-to-many class="Product" />
+		</set>
+	</class>
+</hibernate-mapping>
